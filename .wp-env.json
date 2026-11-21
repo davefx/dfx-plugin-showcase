@@ -1,0 +1,9 @@
+{
+	"core": null,
+	"plugins": [ "./tests/fixture-plugin", "https://downloads.wordpress.org/plugin/random-user-ids.zip" ],
+	"mappings": {
+		"wp-content/plugins/fixture-plugin/dfx-plugin-showcase": "."
+	},
+	"port": 8897,
+	"testsPort": 8898
+}
