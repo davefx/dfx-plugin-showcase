@@ -8,7 +8,7 @@ settings page that lists the author's other plugins. No menu entries, banners or
 - **The catalog lives at `https://davefx.com/plugins.json`.** Publishing a new plugin there makes
   it appear in every plugin, without releasing any of them. `catalog.json` in this folder is the
   same file: it is both the source to publish and the fallback each plugin bundles.
-- **Network:** one GET, made only when an administrator opens the tab, cached for a week (12 hours
+- **Network:** one GET, with a neutral user agent (WordPress's default carries the site's URL), made only when an administrator opens the tab, cached for a week (12 hours
   when the site cannot be reached, showing the bundled copy meanwhile). The cache is shared by
   every plugin on the site.
 - **Newest copy wins.** Every plugin bundles a copy. Each copy announces its version in `load.php`,

@@ -13,8 +13,8 @@ defined( 'ABSPATH' ) || exit;
  * Fetches the catalog from the author's site, caches it, and prints it as plugin cards.
  *
  * Network: one GET to CATALOG_URL, made only when an administrator opens the tab, and then at
- * most once a week (once every 12 hours while the site is unreachable). Nothing is sent but the
- * request itself. If the request fails, the catalog bundled in catalog.json is shown instead.
+ * most once a week (once every 12 hours while the site is unreachable). Nothing about the
+ * site is sent: the request uses a neutral user agent, not WordPress's, which has the site URL. If the request fails, the catalog bundled in catalog.json is shown instead.
  */
 final class DFX_Plugin_Showcase {
 
@@ -211,6 +211,8 @@ final class DFX_Plugin_Showcase {
 			array(
 				'timeout'     => 5,
 				'redirection' => 2,
+				// WordPress's default user agent carries the site's URL; this one says nothing about the site.
+				'user-agent'  => 'DFX-Plugin-Showcase/' . ( $GLOBALS['dfx_plugin_showcase']['version'] ?? '1' ),
 			)
 		);
 		$remote   = null;

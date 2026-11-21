@@ -15,7 +15,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $GLOBALS['dfx_plugin_showcase']['candidates'][] = array(
-	'version' => '1.0.0',
+	'version' => '1.0.1',
 	'file'    => __DIR__ . '/class-dfx-plugin-showcase.php',
 );
 
