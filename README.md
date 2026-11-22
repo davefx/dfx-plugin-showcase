@@ -34,11 +34,20 @@ settings page that lists the author's other plugins. No menu entries, banners or
    dfx_plugin_showcase_render( array( 'exclude' => '<this plugin's catalog id>' ) );
    ```
 
+   When the settings page has no tabs of its own (for example a section under WooCommerce >
+   Settings > Integration, as in the Wareferry plugins), use a discreet link instead: a
+   «More plugins ›» link at the bottom of the settings that reloads the page with
+   `?more-plugins=1`, renders the list there, and offers a «Hide» link back. Either way, render
+   the list only when the administrator asks for it, so nothing is downloaded before that, and
+   adapt the readme sentence below to say "link" and where it is.
+
 4. In `readme.txt` (WordPress.org requires it), under `== External services ==`:
 
    > The "More plugins" tab of the settings page downloads the list of the author's other plugins
    > from davefx.com (https://davefx.com/plugins.json) when an administrator opens it, at most once
-   > a week. Nothing about the site or its users is sent. Privacy policy: https://davefx.com/…
+   > a week. Nothing about the site or its users is sent: the request identifies itself only as
+   > DFX-Plugin-Showcase and its version, although, as with any web request, davefx.com's server
+   > receives the IP address of the server making it. Privacy policy: https://davefx.com/…
 
 Catalog ids: `coupon-audit`, `role-changer`, `leanroles`, `telegram-feed`, `random-user-ids`.
 
